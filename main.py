@@ -7,6 +7,7 @@ PROMISED_UP = 40
 CHROME_DRIVER_PATH = YOUR PATH
 TWITTER_EMAIL = USERNAME
 TWITTER_PASSWORD = PASSWORD
+INTERNET_PROVIDER = "YOUR PROVIDER"
 
 
 class InternetSpeedTwitterBot:
@@ -54,7 +55,7 @@ class InternetSpeedTwitterBot:
         tweet_compose = self.driver.find_element_by_xpath(
             '//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div/div/div/div')
 
-        tweet = f"Hey @TPG_Telecom, why is my internet speed {self.down}down/{self.up}up when I pay for {PROMISED_DOWN}down/{PROMISED_UP}up?"
+        tweet = f"Hey {INTERNET_PROVIDER}, why is my internet speed {self.down}down/{self.up}up when I pay for {PROMISED_DOWN}down/{PROMISED_UP}up?"
         tweet_compose.send_keys(tweet)
         time.sleep(3)
 
